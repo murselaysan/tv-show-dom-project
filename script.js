@@ -10,3 +10,8 @@ function makePageForEpisodes(episodeList) {
 }
 
 window.onload = setup;
+
+var div = document.createElement('div');
+div.textContent = "Sup, y'all?";
+div.setAttribute('class', 'note');
+document.body.appendChild(div);
