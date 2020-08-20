@@ -11,53 +11,57 @@ function makePageForEpisodes(episodeList) {
 
 window.onload = setup;
 
-var newContainerDiv = document.createElement('div');
-var newRowDiv = document.createElement('div');
-var newColDiv = document.createElement('div');
-var newCardDiv = document.createElement('div');
-var cardImage = document.createElement('img');
-var cardBody = document.createElement('div');
-var h5Tag = document.createElement('h5');
-var pElement = document.createElement('p');
-var aElement= document.createElement('a');
+
+function createCard(){
+  var newContainerDiv = document.createElement('div');
+  var newRowDiv = document.createElement('div');
+  var newColDiv = document.createElement('div');
+  var newCardDiv = document.createElement('div');
+  var cardImage = document.createElement('img');
+  var cardBody = document.createElement('div');
+  var h5Tag = document.createElement('h5');
+  var pElement = document.createElement('p');
+  var aElement= document.createElement('a');
 
 
 
-newContainerDiv.setAttribute('class','container');
-newRowDiv.setAttribute('class','row');
-newColDiv.setAttribute('class','col');
-newCardDiv.setAttribute('class','card');
-cardImage.setAttribute('class','card-img-top');
-cardBody.setAttribute('class','card-body');
-h5Tag.setAttribute('class','card-title');
-pElement.setAttribute('class','card-text');
-aElement.setAttribute('class','btn btn-primary');
+  newContainerDiv.setAttribute('class','container');
+  newRowDiv.setAttribute('class','row');
+  newColDiv.setAttribute('class','col');
+  newCardDiv.setAttribute('class','card');
+  cardImage.setAttribute('class','card-img-top');
+  cardBody.setAttribute('class','card-body');
+  h5Tag.setAttribute('class','card-title');
+  pElement.setAttribute('class','card-text');
+  aElement.setAttribute('class','btn btn-primary');
 
-h5Tag.textContent = "Card title";
-pElement.textContent = "Some quick example text to build on the card title and make up the bulk of the card's content.";
-aElement.textContent = "Go Somewhere";
-
-
-cardBody.appendChild(h5Tag);
-cardBody.appendChild(pElement);
-cardBody.appendChild(aElement);
-
-newCardDiv.appendChild(cardImage);
-newCardDiv.appendChild(cardBody);
+  h5Tag.textContent = "Card title";
+  pElement.textContent = "Some quick example text to build on the card title and make up the bulk of the card's content.";
+  aElement.textContent = "Go Somewhere";
 
 
-newColDiv.appendChild(newCardDiv);
+  cardBody.appendChild(h5Tag);
+  cardBody.appendChild(pElement);
+  cardBody.appendChild(aElement);
 
-newRowDiv.appendChild(newColDiv);
-
-newContainerDiv.appendChild(newRowDiv);
-
-newCardDiv.style.width ="18rem"
-
-cardImage.src = "http://static.tvmaze.com/uploads/images/medium_landscape/1/2669.jpg";
+  newCardDiv.appendChild(cardImage);
+  newCardDiv.appendChild(cardBody);
 
 
-document.body.appendChild(newContainerDiv);
+  newColDiv.appendChild(newCardDiv);
+
+  newRowDiv.appendChild(newColDiv);
+
+  newContainerDiv.appendChild(newRowDiv);
+
+  newCardDiv.style.width ="18rem"
+
+  cardImage.src = "http://static.tvmaze.com/uploads/images/medium_landscape/1/2669.jpg";
+
+
+  document.body.appendChild(newContainerDiv);
+
+}
 
 var elements = document.querySelector(".container");
 for (var i= 0; i < 74; i++) {
