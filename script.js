@@ -21,6 +21,8 @@ var h5Tag = document.createElement('h5');
 var pElement = document.createElement('p');
 var aElement= document.createElement('a');
 
+
+
 newContainerDiv.setAttribute('class','container');
 newRowDiv.setAttribute('class','row');
 newColDiv.setAttribute('class','col');
@@ -55,10 +57,11 @@ newCardDiv.style.width ="18rem"
 cardImage.src = "http://static.tvmaze.com/uploads/images/medium_landscape/1/2669.jpg";
 
 
-
-
-
-
-
-
 document.body.appendChild(newContainerDiv);
+
+var elements = document.querySelector(".container");
+for (var i= 0; i < 74; i++) {
+    document.createElement('div')= elements[i];
+}
+
+
