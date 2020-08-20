@@ -17,22 +17,28 @@ let content = root.innerHTML;
 let tvEpisodes = getAllEpisodes();
 
 
+
+
 tvEpisodes.map(tvEpisode => {
+
+  let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
+ 
+
+  let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
+
   root.innerHTML += `
-  <div class="container">
-  <div class="row>
+  
     <div class="col-sm-6 col-md-4 col-lg-3 mb-4"
       <div class="card shadow-sm rounded" style="width: 18rem;">
         <img class="card-img-top" src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
         <div class="card-body">
-          <h5 class="card-title">${tvEpisode.name}</h5>
+          <h5 class="card-title">${tvEpisode.name}-S${session}E${numbers}</h5>
           <p class="card-text">${tvEpisode.summary.substring(0,150)}...</p>
           <a href="${tvEpisode.url}" target="_blank" class="btn btn-primary">View Details</a>
         </div>
       </div>
     </div>
-  </div>
-  </div>
+  
   `;
 })
 
@@ -90,9 +96,6 @@ tvEpisodes.map(tvEpisode => {
 
 // }
 
-// var elements = document.querySelector(".container");
-// for (var i= 0; i < 74; i++) {
-//     document.createElement('div')= elements[i];
-// }
+
 
 
