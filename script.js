@@ -28,7 +28,7 @@ tvEpisodes.map(tvEpisode => {
 
   root.innerHTML += `
   
-    <div class="col-sm-6 col-md-4 col-lg-3 mb-4"
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card"
       <div class="card shadow-sm rounded" style="width: 18rem;">
         <img class="card-img-top" src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
         <div class="card-body">
@@ -41,6 +41,30 @@ tvEpisodes.map(tvEpisode => {
   
   `;
 })
+
+function searchTitles() {
+  let  input, filter, root, title, i, txtValue;
+
+  input = document.getElementById("js-search-titles-input");
+
+  filter = input.value.toUpperCase();
+
+  card = document.getElementsByClassName("js-series-card");
+
+  let displayResult = document.getElementById("displayResult");
+
+  for (i = 0; i < card.length; i++) {
+    title = card[i].getElementsByClassName("card-title")[0];
+    if (title) {
+      txtValue = title.textContent || title.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        card[i].style.display = "";
+      } else {
+        card[i].style.display = "none";
+      }
+    }       
+  }
+}
 
 // const searchBar = document.getElementById("inputMovie");
 
