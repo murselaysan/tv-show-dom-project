@@ -42,6 +42,47 @@ tvEpisodes.map(tvEpisode => {
   `;
 })
 
+// const searchBar = document.getElementById("inputMovie");
+
+// searchBar.addEventListener("keyup", e => {
+//   const searchString = e.target.value;
+
+//   const filteredCharacters = tvEpisodes.filter(character => {
+//     return (
+//       character.name.includes(searchString)
+//     );
+//   });
+
+// });
+
+
+// function myFunction() {
+
+//   let input = document.getElementById('inputMovie');
+
+//   let inputValue = input.value.toUpperCase();
+
+//   const root = document.getElementById("root");
+
+  // const filteredCharacters = tvEpisodes.filter(character => {
+  //   return (
+  //     character.name.includes(inputValue)
+  //     );
+  // });
+  // console.log(filteredCharacters);
+
+  // tvEpisodes.map(tvEpisode => {
+  //   let movieNames = tvEpisode.name.toUpperCase();
+  //   if(movieNames.includes(inputValue)){
+  //   root.style.display = "";
+  //   }
+  //   else{
+  //     root.style.display = "none";
+  //   }
+  // }
+  // )
+// }
+
 
 
 
