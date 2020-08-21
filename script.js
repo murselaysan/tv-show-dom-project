@@ -22,7 +22,7 @@ let tvEpisodes = getAllEpisodes();
 tvEpisodes.map(tvEpisode => {
 
   let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
- 
+
 
   let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
 
@@ -43,7 +43,7 @@ tvEpisodes.map(tvEpisode => {
 })
 
 function searchTitles() {
-  let  input, filter, root, title, i, txtValue;
+  let  input, filter, root, title, i, txtValue,result ;
 
   input = document.getElementById("js-search-titles-input");
 
@@ -51,20 +51,30 @@ function searchTitles() {
 
   card = document.getElementsByClassName("js-series-card");
 
-  let displayResult = document.getElementById("displayResult");
+  result = document.getElementById("js-result-input");
+
+
+
+
+
+
 
   for (i = 0; i < card.length; i++) {
     title = card[i].getElementsByClassName("card-title")[0];
     if (title) {
       txtValue = title.textContent || title.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        card[i].style.display = "";
+        card[i].style.display = ""
+        //result.innerHTML = `Displaying ${card[i]}/73`;   
+        console.log(card[i].length);   
+  }
       } else {
         card[i].style.display = "none";
       }
-    }       
+    } 
   }
-}
+
+
 
 // const searchBar = document.getElementById("inputMovie");
 
