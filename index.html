@@ -14,14 +14,15 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Example select</label>
       <select class="form-control" id="exampleFormControlSelect1">
-        <option value="" selected disabled>Choose Episode</option>
+        
+        <option value="">All Episodes</option>
       </select>
     </div>
    </div>
  
       
    
-    <input type="text" id="js-search-titles-input" onkeyup="searchTitles()" placeholder="Search for names.." title="Type in a name">
+    <input type="text" id="js-search-titles-input" onkeyup="searchTitles(this.value)" placeholder="Search for names.." title="Type in a name">
     <span>Displaying</span>
     <span id="js-filtered-result"></span>
    /
@@ -40,5 +41,6 @@
 
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
+
   </body>
 </html>

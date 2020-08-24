@@ -44,12 +44,13 @@ tvEpisodes.map(tvEpisode => {
   `;
 })
 // LEVEL 200 
-function searchTitles() {
+function searchTitles(keyword) {
 //define the variables;
   let input = document.getElementById("js-search-titles-input");
-  let filter = input.value.toUpperCase();
+  //let filter = input.value.toUpperCase();
+  let filter = keyword.toUpperCase();
   let card = document.getElementsByClassName("js-series-card");
-  let counter = 0;
+  
   // SEt up the loop
   for (let i = 0; i < card.length; i++) {
     let title = card[i].getElementsByClassName("card-title")[0];
@@ -99,15 +100,17 @@ tvEpisodes.map(tvEpisode => {
 
   selectBox.innerHTML += `
   
-  <option id="select">S${session}E${numbers}-${tvEpisode.name}</option>
+  <option id="select" value="${tvEpisode.name}">S${session}E${numbers}-${tvEpisode.name}</option>
   
   `;
 })
 
 
 selectBox.addEventListener('change', (event) => {
-  const result = document.querySelector('#root');
-  result.textContent = `${event.target.value}`;
+  searchTitles(event.target.value);
+  // let card = document.getElementsByClassName("js-series-card");
+  // const result = document.querySelector('#root')
+  // result.textContent = `${event.target.value}`;
 });
 
 
