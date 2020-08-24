@@ -71,18 +71,48 @@ document.getElementById("js-filtered-result").innerHTML = getAllEpisodes().lengt
 
 
 //LEVEL 300 
-letSelectBox = document.getElementById("select");
+// var option = document.createElement ('option');
+//     text = document.createTextNode (
+//       `${episodeList[i].name} - S${season}E${episode}`
+//       ` S${season}E${episode} - ${episodeList[i].name} `
+//     );
+//     option.setAttribute ('value', episodeList[i].name);
+//     option.appendChild (text);
+//     select.insertBefore (option, select.lastChild);
+
+// const allEpisodes = getAllEpisodes ();
+// selectBox.addEventListener ('change', function (e) {
+//   if (e.target.value === 'default') {
+//     makePageForEpisodes (allEpisodes);
+//   } else search (e.target.value.toLowerCase ());
+// });
+
+
+let selectBox = document.getElementById("exampleFormControlSelect1");
+
+selectBox.innerHTML = " "
+
+
 
 
 tvEpisodes.map(tvEpisode => {
+  let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
 
 
-  select.innerHTML += `
+  let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
+
+  selectBox.innerHTML += `
   
-  ${tvEpisode.name}
+  <option id="select">S${session}E${numbers}-${tvEpisode.name}</option>
   
   `;
 })
+
+
+selectBox.addEventListener('change', (event) => {
+  const result = document.querySelector('#root');
+  result.textContent = `${event.target.value}`;
+});
 
 
 
