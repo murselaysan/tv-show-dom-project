@@ -69,6 +69,27 @@ function searchTitles() {
 document.getElementById("js-total-result").innerHTML = getAllEpisodes().length;
 document.getElementById("js-filtered-result").innerHTML = getAllEpisodes().length;
 
+
+//LEVEL 300 
+letSelectBox = document.getElementById("select");
+
+
+tvEpisodes.map(tvEpisode => {
+
+
+  select.innerHTML += `
+  
+  ${tvEpisode.name}
+  
+  `;
+})
+
+
+
+
+
+
+
 // const searchBar = document.getElementById("inputMovie");
 
 // searchBar.addEventListener("keyup", e => {
