@@ -11,6 +11,8 @@
 
 // window.onload = setup;
 
+
+// LEVEL 100
 const root = document.getElementById("root");
 let content = root.innerHTML;
 
@@ -41,17 +43,18 @@ tvEpisodes.map(tvEpisode => {
   
   `;
 })
-
+// LEVEL 200 
 function searchTitles() {
-  var input, filter, root, title, i, txtValue, counter;
-  input = document.getElementById("js-search-titles-input");
-  filter = input.value.toUpperCase();
-  card = document.getElementsByClassName("js-series-card");
-  counter = 0;
-  for (i = 0; i < card.length; i++) {
-    title = card[i].getElementsByClassName("card-title")[0];
+//define the variables;
+  let input = document.getElementById("js-search-titles-input");
+  let filter = input.value.toUpperCase();
+  let card = document.getElementsByClassName("js-series-card");
+  let counter = 0;
+  // SEt up the loop
+  for (let i = 0; i < card.length; i++) {
+    let title = card[i].getElementsByClassName("card-title")[0];
     if (title) {
-      txtValue = title.textContent || title.innerText;
+      let txtValue = title.textContent || title.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         card[i].style.display = "";
         card[i].classList.add("js-filtered");
