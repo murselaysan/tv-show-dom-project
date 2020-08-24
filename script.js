@@ -43,38 +43,28 @@ tvEpisodes.map(tvEpisode => {
 })
 
 function searchTitles() {
-  let  input, filter, root, title, i, txtValue,result ;
-
+  var input, filter, root, title, i, txtValue, counter;
   input = document.getElementById("js-search-titles-input");
-
   filter = input.value.toUpperCase();
-
   card = document.getElementsByClassName("js-series-card");
-
-  result = document.getElementById("js-result-input");
-
-
-
-
-
-
-
+  counter = 0;
   for (i = 0; i < card.length; i++) {
     title = card[i].getElementsByClassName("card-title")[0];
     if (title) {
       txtValue = title.textContent || title.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        card[i].style.display = ""
-        //result.innerHTML = `Displaying ${card[i]}/73`;   
-        console.log(card[i].length);   
-  }
+        card[i].style.display = "";
+        card[i].classList.add("js-filtered");
       } else {
         card[i].style.display = "none";
+        card[i].classList.remove("js-filtered")
       }
-    } 
+    }       
   }
-
-
+  document.getElementById("js-filtered-result").innerHTML = document.getElementsByClassName("js-filtered").length;
+}
+document.getElementById("js-total-result").innerHTML = getAllEpisodes().length;
+document.getElementById("js-filtered-result").innerHTML = getAllEpisodes().length;
 
 // const searchBar = document.getElementById("inputMovie");
 
