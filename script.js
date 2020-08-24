@@ -90,10 +90,6 @@ document.getElementById("js-filtered-result").innerHTML = getAllEpisodes().lengt
 
 let selectBox = document.getElementById("exampleFormControlSelect1");
 
-selectBox.innerHTML = " "
-
-
-
 
 tvEpisodes.map(tvEpisode => {
   let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
