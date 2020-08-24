@@ -30,9 +30,9 @@ tvEpisodes.map(tvEpisode => {
 
   root.innerHTML += `
   
-    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card"
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card border"
       <div class="card shadow-sm rounded" style="width: 18rem;">
-        <img class="card-img-top" src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
+        <img class="card-img-top rounded-top"  src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
         <div class="card-body">
           <h5 class="card-title">${tvEpisode.name}-S${session}E${numbers}</h5>
           <p class="card-text">${tvEpisode.summary.substring(0,150)}...</p>
