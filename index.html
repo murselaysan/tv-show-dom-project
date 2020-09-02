@@ -11,29 +11,34 @@
 
   <body>
 <!-- Image and text -->
+<div id="navbar">
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <img src="https://img.pixers.pics/pho_wat(s3:700/FO/34/60/39/31/700_FO34603931_bc5197d675008e68a21a957121ee5c59.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/stickers-television-tv-icon-recycled-paper-craft.jpg.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-    Bootstrap
+  Marcell TV
   </a>
 </nav>
-  
+</div>
    <div id="js-select">
     <div class="form-group">
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control w-50 p-3 " id="exampleFormControlSelect1"  placeholder="Search for names.." >
         
-        <option value="">--Select Episode--</option>
+        <option value="" selected>--Select Episode--</option>
       </select>
     </div>
    </div>
  
       
-   
-    <input type="text" id="js-search-titles-input" onkeyup="searchTitles(this.value)" placeholder="Search for names.." title="Type in a name">
+   <div class="input-group w-25 p-3 ">
+    <input type="text" class="form-control"  id="js-search-titles-input" onkeyup="searchTitles(this.value)" placeholder="Search for names.." title="Type in a name">
     <span>Displaying</span>
     <span id="js-filtered-result"></span>
    /
     <span id="js-total-result"></span>
+  </div>
+
+    
+    
 
 
     <div id="root" class="row">
