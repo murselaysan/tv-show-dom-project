@@ -30,7 +30,7 @@ tvEpisodes.map(tvEpisode => {
 
   root.innerHTML += `
   
-    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card border"
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card border movies-card"
       <div class="card shadow-sm rounded" style="width: 18rem;">
         <img class="card-img-top rounded-top"  src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
         <div class="card-body">

@@ -1,6 +1,15 @@
 #root {
-  color: red;
+  color:black;
 }
-#navbar{
+#header{
   height: 200px;
+  padding: 10px 0;
 }
+img{
+  width: 200px;
+}
+.movies-card{
+  margin-top: 200px;
+}
+
+
