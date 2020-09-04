@@ -11,5 +11,12 @@ img{
 .movies-card{
   margin-top: 200px;
 }
+span{
+  color: white;
+}
+#brand_name{
+  margin-left: 2rem;
+  font-size: 2rem;
+}
 
 
