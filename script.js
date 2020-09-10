@@ -5,13 +5,12 @@ let content = root.innerHTML;
 
 //let tvEpisodes = getAllEpisodes();
 
- fetch("https://api.tvmaze.com/shows/82/episodes")
-.then(response => response.json())
-.then(function (tvEpisodes){
+fetch("https://api.tvmaze.com/shows/82/episodes")
+  .then(response => response.json())
+  .then(function (tvEpisodes){
   tvEpisodes.map(tvEpisode => {
 
     let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
-  
   
     let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
   
@@ -31,7 +30,7 @@ let content = root.innerHTML;
     `;
   })
 })
-
+.catch(error => console.log(error))
 
 
 
@@ -93,8 +92,54 @@ selectBox.addEventListener('change', (event) => {
   // result.textContent = `${event.target.value}`;
 });
 
+//LEVEL 400
 
+let showAll = getAllShows()
+//console.log(showAll);
 
+let showBox = document.getElementById("showTime");
 
+showAll.map(tvShows => {
+ showBox.innerHTML += `
+  
+  <option id="select" value="${tvShows.name}">${tvShows.name}</option>
+  
+  `;
+})
+
+// fetch("https://api.tvmaze.com/shows/527/episodes")
+// .then(response => response.json())
+// .then(data => console.log(data))
+// .catch(error=>console.log(error))
+// function getShow(){
+//   let showAll = getOneShow();
+//   showBox.innerHTML += `
+  
+//   <option id="select" value="${showAll.name}">${showAll.name}</option>
+  
+//   `;
+// }
+// showBox.addEventListener('change', (event) => {
+//   searchTitles(event.target.value);
+//  //getShow(event.target.value);
+//   // let card = document.getElementsByClassName("js-series-card");
+//   // const result = document.querySelector('#root')
+//   // result.textContent = `${event.target.value}`;
+// });
+
+function myFunction() {
+  console.log("hello");
+}
+function sortSelectOptions(selectElement) {
+	var options = $(selectElement + " option");
+
+	options.sort(function(a,b) {
+		if (a.text.toUpperCase() > b.text.toUpperCase()) return 1;
+		else if (a.text.toUpperCase() < b.text.toUpperCase()) return -1;
+		else return 0;
+	});
+
+	$(selectElement).empty().append( options );
+}
 
 

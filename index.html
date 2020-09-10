@@ -20,11 +20,19 @@
     <ul class="navbar-nav mr-auto">
       
     </ul>
-    <div id="js-select">
+    <div id="js-select" class="form-group mx-sm-3 mb-2">
     
-      <select class="form-control " id="exampleFormControlSelect1"  placeholder="Search for names.." >
+      <select class="form-control mr-sm-2" id="exampleFormControlSelect1"  placeholder="Search for names.." >
         
-        <option value="" selected>----------------------Select Episode-------------------------</option>
+        <option value="" selected>-------Select Episode--------</option>
+      </select>
+      
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <select class="form-control mr-sm-2 " id="showTime"  placeholder="" onchange="myFunction(this.value)" >
+        
+        <option value="" selected>---SHOW---</option>
+        
       </select>
     </div>
     <form class="form-inline my-2 my-lg-0">
@@ -42,16 +50,20 @@
 
 
     <div id="root" class="row"></div>
+
+    <p id="demo"></p>
     
 
       
-
+    <script src="./shows.js"></script>
   
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
 
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
+
+  
 
   </body>
 </html>
