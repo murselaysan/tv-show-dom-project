@@ -8,6 +8,7 @@ let content = root.innerHTML;
 fetch("https://api.tvmaze.com/shows/82/episodes")
   .then(response => response.json())
   .then(function (tvEpisodes){
+  
   tvEpisodes.map(tvEpisode => {
 
     let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
@@ -85,6 +86,8 @@ tvEpisodes.map(tvEpisode => {
   `;
 })
 })
+.catch(error=>console.log(error))
+
 selectBox.addEventListener('change', (event) => {
   searchTitles(event.target.value);
   // let card = document.getElementsByClassName("js-series-card");
@@ -107,9 +110,7 @@ showAll.map(tvShows => {
   `;
 })
 
-// fetch("https://api.tvmaze.com/shows/527/episodes")
-// .then(response => response.json())
-// .then(data => console.log(data))
+
 // .catch(error=>console.log(error))
 // function getShow(){
 //   let showAll = getOneShow();
@@ -128,18 +129,10 @@ showAll.map(tvShows => {
 // });
 
 function myFunction() {
-  console.log("hello");
+  showAll.map(tvShows => {
+    fetch(`https://api.tvmaze.com/shows/${tvShows.id}/episodes`)
+.then(response => response.json())
+.then(data => console.log(data.id))
+     
+   })
 }
-function sortSelectOptions(selectElement) {
-	var options = $(selectElement + " option");
-
-	options.sort(function(a,b) {
-		if (a.text.toUpperCase() > b.text.toUpperCase()) return 1;
-		else if (a.text.toUpperCase() < b.text.toUpperCase()) return -1;
-		else return 0;
-	});
-
-	$(selectElement).empty().append( options );
-}
-
-
