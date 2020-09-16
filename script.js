@@ -73,7 +73,7 @@ fetch("https://api.tvmaze.com/shows/82/episodes")
 .then(response => response.json())
 .then(function (tvEpisodes){
 
-tvEpisodes.map(tvEpisode => {
+   tvEpisodes.map(tvEpisode => {
   let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
 
 
@@ -129,6 +129,12 @@ function myFunction() {
       let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
     
       let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
+
+      selectBox.innerHTML += `
+  
+      <option id="select" value="${tvEpisode.name}">S${session}E${numbers}-${tvEpisode.name}</option>
+
+      `;
     
       root.innerHTML += `
       
@@ -144,11 +150,7 @@ function myFunction() {
         </div>
       
       `;
-      selectBox.innerHTML += `
-  
-        <option id="select" value="${tvEpisode.name}">S${session}E${numbers}-${tvEpisode.name}</option>
-  
-  `;
+
     })
   })
 })
