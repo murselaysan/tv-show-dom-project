@@ -105,6 +105,33 @@ showBox.innerHTML += `
   
   `;
 })
+function myFunction (){
+
+  root.innerHTML = "";
+  showAll.map(tvEpisode => {
+
+  let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
+
+  let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
+
+  root.innerHTML += `
+  
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card border movies-card"
+      <div class="card shadow-sm rounded" style="width: 18rem;">
+        <img class="card-img-top rounded-top"  src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
+        <div class="card-body">
+          <h5 class="card-title">${tvEpisode.name}-S${session}E${numbers}</h5>
+          <p class="card-text">${tvEpisode.summary.substring(0,150)}...</p>
+          <a href="${tvEpisode.url}" target="_blank" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  
+  `;
+})
+}
+
+
 
 // let id = showAll.map(tvShows => {
 //   fetch(`https://api.tvmaze.com/shows/${tvShows.id}/episodes`)
@@ -115,46 +142,46 @@ showBox.innerHTML += `
 // console.log(id);
 // let  url=`https://api.tvmaze.com/shows/${id}/episodes`;
 
-function myFunction() {
-  root.innerHTML = "";
-  selectBox.innerHTML = "";
+// function myFunction() {
+//   root.innerHTML = "";
+//   selectBox.innerHTML = "";
 
-  showAll.map(tvShows => {
-    fetch(`https://api.tvmaze.com/shows/${tvShows.id}/episodes`)
-    .then(response => response.json())
-    .then(function (tvEpisodes){
+//   showAll.map(tvShows => {
+//     fetch(`https://api.tvmaze.com/shows/${tvShows.id}/episodes`)
+//     .then(response => response.json())
+//     .then(function (tvEpisodes){
     
-    tvEpisodes.map(tvEpisode => {
+//     tvEpisodes.map(tvEpisode => {
   
-      let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
+//       let session = tvEpisode.season.toString().length===1 ? '0'+ tvEpisode.season : tvEpisode.season;
     
-      let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
+//       let numbers = tvEpisode.number.toString().length===1 ? '0' + tvEpisode.number : tvEpisode.number;
 
-      selectBox.innerHTML += `
+//       selectBox.innerHTML += `
   
-      <option id="select" value="${tvEpisode.name}">S${session}E${numbers}-${tvEpisode.name}</option>
+//       <option id="select" value="${tvEpisode.name}">S${session}E${numbers}-${tvEpisode.name}</option>
 
-      `;
+//       `;
     
-      root.innerHTML += `
+//       root.innerHTML += `
       
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card border movies-card"
-          <div class="card shadow-sm rounded" style="width: 18rem;">
-            <img class="card-img-top rounded-top"  src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
-            <div class="card-body">
-              <h5 class="card-title">${tvEpisode.name}-S${session}E${numbers}</h5>
-              <p class="card-text">${tvEpisode.summary.substring(0,150)}...</p>
-              <a href="${tvEpisode.url}" target="_blank" class="btn btn-primary">View Details</a>
-            </div>
-          </div>
-        </div>
+//         <div class="col-sm-6 col-md-4 col-lg-3 mb-4 js-series-card border movies-card"
+//           <div class="card shadow-sm rounded" style="width: 18rem;">
+//             <img class="card-img-top rounded-top"  src="${tvEpisode.image.medium}" alt="${tvEpisode.name} image">
+//             <div class="card-body">
+//               <h5 class="card-title">${tvEpisode.name}-S${session}E${numbers}</h5>
+//               <p class="card-text">${tvEpisode.summary.substring(0,150)}...</p>
+//               <a href="${tvEpisode.url}" target="_blank" class="btn btn-primary">View Details</a>
+//             </div>
+//           </div>
+//         </div>
       
-      `;
+//       `;
 
-    })
-  })
-})
-}
+//     })
+//   })
+// })
+// }
 
 
 
